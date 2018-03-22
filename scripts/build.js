@@ -50,8 +50,8 @@ function compile (config) {
   })
 }
 
-const clientConfig = createClientConfig('development')
-const serverConfig = createServerConfig('development')
+const clientConfig = createClientConfig('production')
+const serverConfig = createServerConfig('production')
 
 Promise.all([
   compile(clientConfig),
