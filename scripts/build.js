@@ -27,11 +27,11 @@ function compile (config) {
 
       const messages = formatWebpackMessages(stats.toJson({}, true))
 
-      if (messages.errors.length) {
+      if (stats.hasErrors()) {
         return reject(new Error(messages.errors.join('\n\n')))
       }
 
-      if (process.env.CI && (typeof process.env.CI !== 'string' || process.env.CI.toLowerCase() !== 'false') && messages.warnings.length) {
+      if (process.env.CI && (typeof process.env.CI !== 'string' || process.env.CI.toLowerCase() !== 'false') && stats.hasWarnings()) {
         console.log(
           chalk.yellow(`
             Treating warnings as errors because process.env.CI = true.
@@ -50,8 +50,8 @@ function compile (config) {
   })
 }
 
-const clientConfig = createClientConfig()
-const serverConfig = createServerConfig()
+const clientConfig = createClientConfig('development')
+const serverConfig = createServerConfig('development')
 
 Promise.all([
   compile(clientConfig),
@@ -62,11 +62,10 @@ Promise.all([
   console.log(chalk.red('Failed to compile.\n'))
   printBuildError(err)
   process.exit(1)
-})
-  .catch(err => {
-    if (err && err.message) {
-      console.error(err.message)
-    }
+}).catch(err => {
+  if (err && err.message) {
+    console.error(err.message)
+  }
 
-    process.exit(1)
-  })
+  process.exit(1)
+})

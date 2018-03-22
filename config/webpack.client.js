@@ -1,17 +1,15 @@
 const AssetsManifestPlugin = require('webpack-assets-manifest')
 const merge = require('webpack-merge')
-const baseConfig = require('./webpack.base')
+const createBaseConfig = require('./webpack.base')
 
-module.exports = function () {
-  return merge(baseConfig, {
+module.exports = function (env = 'development') {
+  return merge(createBaseConfig('web', env), {
     entry: {
       bundle: [
         require.resolve('@babel/polyfill'),
         './js/entry-client.js'
       ]
     },
-
-    target: 'web',
 
     plugins: [
       new AssetsManifestPlugin({
