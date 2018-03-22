@@ -1,5 +1,6 @@
 const AssetsManifestPlugin = require('webpack-assets-manifest')
 const merge = require('webpack-merge')
+const paths = require('./paths')
 const createBaseConfig = require('./webpack.base')
 
 module.exports = function (env = 'development') {
@@ -7,7 +8,7 @@ module.exports = function (env = 'development') {
     entry: {
       bundle: [
         require.resolve('@babel/polyfill'),
-        './js/entry-client.js'
+        paths.clientEntry
       ]
     },
 

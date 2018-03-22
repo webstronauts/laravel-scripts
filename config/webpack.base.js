@@ -1,23 +1,33 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
+const paths = require('./paths')
+
+console.log(paths)
 
 module.exports = function (target = 'web', env = 'development') {
   const config = {
     // Use Laravel's default assets directory as webpack's context.
-    context: path.resolve(process.cwd(), 'resources/assets'),
+    context: paths.assetsPath,
     // Specify mode (either 'development' or 'production')
     mode: env,
     // Specify target (either 'node' or 'web')
     target,
 
     output: {
-      path: path.resolve(process.cwd(), 'public'),
+      path: paths.appPublic,
       filename: 'js/[name].js'
     },
 
     resolve: {
+      // We need to tell webpack how to resolve both our node_modules and
+      // the users', so we use resolve and resolveLoader.
+      modules: ['node_modules', paths.appNodeModules],
       extensions: ['.js', '.jsx', '.json', '.graphql', '.gql', '.scss', '.sass', '.css']
+    },
+
+    resolveLoader: {
+      modules: [paths.appNodeModules, paths.ownNodeModules],
     },
 
     module: {
@@ -110,7 +120,7 @@ module.exports = function (target = 'web', env = 'development') {
       // to restart the development server for Webpack to discover it. This plugin
       // makes the discovery automatic so you don't have to restart.
       // See https://github.com/facebook/create-react-app/issues/186
-      new WatchMissingNodeModulesPlugin(path.resolve('node_modules'))
+      new WatchMissingNodeModulesPlugin(paths.appNodeModules)
     ) */
   }
 

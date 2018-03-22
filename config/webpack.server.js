@@ -1,12 +1,13 @@
 const nodeExternals = require('webpack-node-externals')
 const merge = require('webpack-merge')
+const paths = require('./paths')
 const createBaseConfig = require('./webpack.base')
 
 module.exports = function (env = 'development') {
   return merge(createBaseConfig('node', env), {
     entry: [
       require.resolve('@babel/polyfill'),
-      './js/entry-server.js'
+      paths.serverEntry
     ],
 
     output: {
