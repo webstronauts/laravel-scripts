@@ -3,8 +3,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
 const paths = require('./paths')
 
-console.log(paths)
-
 module.exports = function (target = 'web', env = 'development') {
   const config = {
     // Use Laravel's default assets directory as webpack's context.
