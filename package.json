@@ -1,5 +1,6 @@
 {
   "name": "@webstronauts/laravel-scripts",
+  "private": false,
   "version": "0.1.0",
   "description": "This package includes scripts and configuration used by Laravel Liftoff",
   "license": "MIT",
