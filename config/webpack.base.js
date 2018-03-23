@@ -32,6 +32,8 @@ module.exports = function (target = 'web', env = 'development') {
     },
 
     module: {
+      // Makes missing exports an error instead of warning
+      strictExportPresence: true,
       rules: [
         {
           oneOf: [
