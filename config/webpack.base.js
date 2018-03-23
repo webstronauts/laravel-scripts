@@ -3,10 +3,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('razzle-dev-utils/FriendlyErrorsPlugin')
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
+const dotenv = require('dotenv')
+const dotenvExpand = require('dotenv-expand')
+const resolveEnvVars = require('resolve-env-vars')
 const webpack = require('webpack')
 const paths = require('./paths')
 
+dotenvExpand(dotenv.config({ path: paths.appEnvPath }));
+
 module.exports = function (target = 'web', env = 'development') {
+  const envVars = resolveEnvVars('LIFTOFF_')
+
   const config = {
     // Use Laravel's default assets directory as webpack's context.
     context: paths.assetsPath,
@@ -119,6 +126,7 @@ module.exports = function (target = 'web', env = 'development') {
     },
 
     plugins: [
+      new webpack.DefinePlugin(envVars.stringified),
       new CaseSensitivePathsPlugin(),
 
       new FriendlyErrorsPlugin({
