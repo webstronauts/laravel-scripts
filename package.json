@@ -25,6 +25,7 @@
     "@babel/preset-react": "^7.0.0-beta.42",
     "@babel/preset-stage-2": "^7.0.0-beta.42",
     "babel-loader": "^8.0.0-beta",
+    "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "^2.3.2",
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",

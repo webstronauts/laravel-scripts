@@ -1,4 +1,5 @@
 const path = require('path')
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
 const webpack = require('webpack')
@@ -103,6 +104,8 @@ module.exports = function (target = 'web', env = 'development') {
     },
 
     plugins: [
+      new CaseSensitivePathsPlugin(),
+
       new ExtractTextPlugin({
         filename: env === 'production' ? 'css/bundle.[chunkhash:8].css' : 'css/bundle.css'
       }),
