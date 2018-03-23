@@ -14,7 +14,7 @@ module.exports = function (env = 'development') {
 
     plugins: [
       new AssetsManifestPlugin({
-        output: 'mix-manifest.json',
+        output: paths.appPublicManifest,
         publicPath: '/',
         // The "absolute" key and values are required for Laravel Mix to work.
         customize: (key, value) => ({ key: `/${key}`, value })

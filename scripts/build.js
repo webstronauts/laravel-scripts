@@ -71,8 +71,12 @@ async function build (previousFileSizes) {
 // This lets us display how much they changed later.
 measureFileSizesBeforeBuild(paths.appPublic)
   .then(previousFileSizes => {
-    // Remove all bundled assets
-    del.sync([ paths.appPublicCss, paths.appPublicJs ])
+    // Remove all previously compiled assets
+    del.sync([
+      paths.appPublicCss,
+      paths.appPublicJs,
+      paths.appPublicManifest,
+    ])
 
     // Start the webpack build
     return build(previousFileSizes)
