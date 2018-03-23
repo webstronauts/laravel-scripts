@@ -1,6 +1,6 @@
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const FriendlyErrorsPlugin = require('razzle-dev-utils/FriendlyErrorsPlugin')
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
 const webpack = require('webpack')
@@ -121,8 +121,9 @@ module.exports = function (target = 'web', env = 'development') {
     plugins: [
       new CaseSensitivePathsPlugin(),
 
-      new FriendlyErrorsWebpackPlugin({
-        clearConsole: false
+      new FriendlyErrorsPlugin({
+        verbose: false,
+        target
       }),
 
       new ExtractTextPlugin({
