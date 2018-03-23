@@ -1,6 +1,6 @@
-const path = require('path')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
 const webpack = require('webpack')
@@ -18,7 +18,7 @@ module.exports = function (target = 'web', env = 'development') {
     output: {
       path: paths.appPublic,
       filename: 'js/[name].js',
-      chunkFilename: 'js/[name].bundle.js',
+      chunkFilename: 'js/[name].bundle.js'
     },
 
     resolve: {
@@ -33,12 +33,12 @@ module.exports = function (target = 'web', env = 'development') {
         // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
         // please link the files into your node_modules/ and let module-resolution kick in.
         // Make sure your source files are compiled, as they will not be processed in any way.
-        new ModuleScopePlugin(paths.assetsPath, [paths.appPackageJson]),
+        new ModuleScopePlugin(paths.assetsPath, [paths.appPackageJson])
       ]
     },
 
     resolveLoader: {
-      modules: [paths.appNodeModules, paths.ownNodeModules],
+      modules: [paths.appNodeModules, paths.ownNodeModules]
     },
 
     module: {
@@ -120,6 +120,10 @@ module.exports = function (target = 'web', env = 'development') {
 
     plugins: [
       new CaseSensitivePathsPlugin(),
+
+      new FriendlyErrorsWebpackPlugin({
+        clearConsole: false
+      }),
 
       new ExtractTextPlugin({
         filename: env === 'production' ? 'css/bundle.[chunkhash:8].css' : 'css/bundle.css'
