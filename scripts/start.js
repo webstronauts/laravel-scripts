@@ -3,7 +3,7 @@ process.env.BABEL_ENV = 'development'
 process.env.NODE_ENV = 'development'
 
 const chalk = require('chalk')
-const printBuildError = require('react-dev-utils/printBuildError')
+const printErrors = require('razzle-dev-utils/printErrors')
 const webpack = require('webpack')
 const createClientConfig = require('../config/webpack.client')
 const createServerConfig = require('../config/webpack.server')
@@ -20,7 +20,7 @@ function compile (config) {
     return webpack(config)
   } catch (err) {
     console.log(chalk.red('Failed to compile.\n'))
-    printBuildError(err)
+    printErrors(err)
     process.exit(1)
   }
 }

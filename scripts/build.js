@@ -4,7 +4,7 @@ process.env.NODE_ENV = 'production'
 
 const chalk = require('chalk')
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages')
-const printBuildError = require('react-dev-utils/printBuildError')
+const printErrors = require('razzle-dev-utils/printErrors')
 const webpack = require('webpack')
 const createClientConfig = require('../config/webpack.client')
 const createServerConfig = require('../config/webpack.server')
@@ -60,7 +60,7 @@ Promise.all([
   // ...
 }, err => {
   console.log(chalk.red('Failed to compile.\n'))
-  printBuildError(err)
+  printErrors(err)
   process.exit(1)
 }).catch(err => {
   if (err && err.message) {
