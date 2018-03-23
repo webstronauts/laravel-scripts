@@ -1,6 +1,7 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
+const webpack = require('webpack')
 const paths = require('./paths')
 
 module.exports = function (target = 'web', env = 'development') {
@@ -14,7 +15,8 @@ module.exports = function (target = 'web', env = 'development') {
 
     output: {
       path: paths.appPublic,
-      filename: 'js/[name].js'
+      filename: 'js/[name].js',
+      chunkFilename: 'js/[name].bundle.js',
     },
 
     resolve: {
@@ -102,8 +104,9 @@ module.exports = function (target = 'web', env = 'development') {
 
     plugins: [
       new ExtractTextPlugin({
-        filename: 'css/bundle.css'
+        filename: env === 'production' ? 'css/bundle.[chunkhash:8].css' : 'css/bundle.css'
       }),
+
       // Moment.js is an extremely popular library that bundles large locale files
       // by default due to how Webpack interprets its code. This is a practical
       // solution that requires the user to opt into importing specific locales.
@@ -111,6 +114,11 @@ module.exports = function (target = 'web', env = 'development') {
       // You can remove this if you don't use Moment.js:
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
     ]
+  }
+
+  if (env === 'production') {
+    config.output.filename = 'js/bundle.[chunkhash:8].js'
+    config.output.chunkFilename = 'js/[name].[chunkhash:8].bundle.js'
   }
 
   if (env === 'development') {
