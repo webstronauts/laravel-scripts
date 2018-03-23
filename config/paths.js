@@ -13,6 +13,7 @@ module.exports = {
   appPath: resolveApp('.'),
   appPublic: resolveApp('public'),
   appNodeModules: resolveApp('node_modules'),
+  appPackageJson: resolveApp('package.json'),
   assetsPath: resolveAsset('.'),
 
   serverEntry: resolveAsset('js/entry-server'),

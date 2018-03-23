@@ -1,6 +1,7 @@
 const path = require('path')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
 const webpack = require('webpack')
 const paths = require('./paths')
@@ -24,7 +25,16 @@ module.exports = function (target = 'web', env = 'development') {
       // We need to tell webpack how to resolve both our node_modules and
       // the users', so we use resolve and resolveLoader.
       modules: ['node_modules', paths.appNodeModules],
-      extensions: ['.js', '.jsx', '.json', '.graphql', '.gql', '.scss', '.sass', '.css']
+      extensions: ['.js', '.jsx', '.json', '.graphql', '.gql', '.scss', '.sass', '.css'],
+
+      plugins: [
+        // Prevents users from importing files from outside of src/ (or node_modules/).
+        // This often causes confusion because we only process files within src/ with babel.
+        // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
+        // please link the files into your node_modules/ and let module-resolution kick in.
+        // Make sure your source files are compiled, as they will not be processed in any way.
+        new ModuleScopePlugin(paths.assetsPath, [paths.appPackageJson]),
+      ]
     },
 
     resolveLoader: {
