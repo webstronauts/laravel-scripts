@@ -118,21 +118,7 @@ module.exports = function (target = 'web', env = 'development') {
 
             {
               test: /\.(css|s[ac]ss)$/,
-              use: env === 'development' ? [
-                {
-                  loader: require.resolve('css-loader'),
-                  options: {
-                    importLoaders: 1
-                  }
-                },
-                {
-                  loader: require.resolve('postcss-loader'),
-                  options: {
-                    ident: 'postcss',
-                    sourceMap: true
-                  }
-                }
-              ] : ExtractTextPlugin.extract({
+              use: ExtractTextPlugin.extract({
                 fallback: require.resolve('style-loader'),
                 use: [
                   {
@@ -161,6 +147,10 @@ module.exports = function (target = 'web', env = 'development') {
       new webpack.DefinePlugin(envVars.stringified),
       new CaseSensitivePathsPlugin(),
 
+      new ExtractTextPlugin({
+        filename: env === 'production' ? 'css/bundle.[chunkhash:8].css' : 'css/bundle.css'
+      }),
+
       new FriendlyErrorsPlugin({
         verbose: false,
         target
@@ -178,12 +168,6 @@ module.exports = function (target = 'web', env = 'development') {
   if (env === 'production') {
     config.output.filename = 'js/bundle.[chunkhash:8].js'
     config.output.chunkFilename = 'js/[name].[chunkhash:8].bundle.js'
-
-    config.plugins.push(
-      new ExtractTextPlugin({
-        filename: 'css/bundle.[chunkhash:8].css'
-      })
-    )
   }
 
   if (env === 'development') {
