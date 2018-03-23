@@ -10,6 +10,7 @@
   },
   "files": [
     "bin",
+    "config",
     "scripts"
   ],
   "bin": {
