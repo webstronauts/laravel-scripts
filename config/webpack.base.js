@@ -9,7 +9,7 @@ const resolveEnvVars = require('resolve-env-vars')
 const webpack = require('webpack')
 const paths = require('./paths')
 
-dotenvExpand(dotenv.config({ path: paths.appEnvPath }));
+dotenvExpand(dotenv.config({ path: paths.appEnvPath }))
 
 module.exports = function (target = 'web', env = 'development') {
   const envVars = resolveEnvVars('LIFTOFF_')
@@ -56,6 +56,17 @@ module.exports = function (target = 'web', env = 'development') {
         { parser: { requireEnsure: false } },
 
         {
+          enforce: 'pre',
+          test: /\.s[ac]ss$/,
+          use: {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        },
+
+        {
           oneOf: [
             {
               // Process application JS with Babel.
@@ -99,8 +110,22 @@ module.exports = function (target = 'web', env = 'development') {
             },
 
             {
-              test: /\.css$/,
-              loader: ExtractTextPlugin.extract({
+              test: /\.(css|s[ac]ss)$/,
+              use: env === 'development' ? [
+                {
+                  loader: require.resolve('css-loader'),
+                  options: {
+                    importLoaders: 1
+                  }
+                },
+                {
+                  loader: require.resolve('postcss-loader'),
+                  options: {
+                    ident: 'postcss',
+                    sourceMap: true
+                  }
+                }
+              ] : ExtractTextPlugin.extract({
                 fallback: require.resolve('style-loader'),
                 use: [
                   {
@@ -134,10 +159,6 @@ module.exports = function (target = 'web', env = 'development') {
         target
       }),
 
-      new ExtractTextPlugin({
-        filename: env === 'production' ? 'css/bundle.[chunkhash:8].css' : 'css/bundle.css'
-      }),
-
       // Moment.js is an extremely popular library that bundles large locale files
       // by default due to how Webpack interprets its code. This is a practical
       // solution that requires the user to opt into importing specific locales.
@@ -150,6 +171,12 @@ module.exports = function (target = 'web', env = 'development') {
   if (env === 'production') {
     config.output.filename = 'js/bundle.[chunkhash:8].js'
     config.output.chunkFilename = 'js/[name].[chunkhash:8].bundle.js'
+
+    config.plugins.push(
+      new ExtractTextPlugin({
+        filename: 'css/bundle.[chunkhash:8].css'
+      })
+    )
   }
 
   if (env === 'development') {
