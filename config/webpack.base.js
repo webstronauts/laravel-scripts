@@ -45,6 +45,9 @@ module.exports = function (target = 'web', env = 'development') {
       // Makes missing exports an error instead of warning
       strictExportPresence: true,
       rules: [
+        // Disable require.ensure as it's not a standard language feature.
+        { parser: { requireEnsure: false } },
+
         {
           oneOf: [
             {
