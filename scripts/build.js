@@ -3,11 +3,13 @@ process.env.BABEL_ENV = 'production'
 process.env.NODE_ENV = 'production'
 
 const chalk = require('chalk')
+const del = require('del')
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages')
-const printErrors = require('razzle-dev-utils/printErrors')
+const { measureFileSizesBeforeBuild, printFileSizesAfterBuild } = require('react-dev-utils/FileSizeReporter')
 const webpack = require('webpack')
 const createClientConfig = require('../config/webpack.client')
 const createServerConfig = require('../config/webpack.server')
+const paths = require('../config/paths')
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
@@ -16,7 +18,7 @@ process.on('unhandledRejection', err => {
   throw err
 })
 
-function compile (config) {
+function compile (entry, config) {
   const compiler = webpack(config)
 
   return new Promise((resolve, reject) => {
@@ -42,6 +44,8 @@ function compile (config) {
         return reject(new Error(messages.warnings.join('\n\n')))
       }
 
+      console.log(chalk.green(`Compiled ${entry} assets successfully.`))
+
       return resolve({
         stats,
         warnings: messages.warnings
@@ -50,22 +54,58 @@ function compile (config) {
   })
 }
 
-const clientConfig = createClientConfig('production')
-const serverConfig = createServerConfig('production')
+function build (previousFileSizes) {
+  console.log('Creating an optimized production build...')
 
-Promise.all([
-  compile(clientConfig),
-  compile(serverConfig)
-]).then(({ stats, warnings }) => {
-  // ...
-}, err => {
-  console.log(chalk.red('Failed to compile.\n'))
-  printErrors(err)
-  process.exit(1)
-}).catch(err => {
-  if (err && err.message) {
-    console.error(err.message)
-  }
+  return Promise.all([
+    compile('client', createClientConfig('production')),
+    compile('server', createServerConfig('production'))
+  ]).then(([clientResult, serverResult]) => ({
+    stats: clientResult.stats,
+    previousFileSizes,
+    warnings: { ...clientResult.warnings, ...serverResult.warnings }
+  }))
 
-  process.exit(1)
-})
+  /* .then(({ stats, warnings }) => {
+    // ...
+  }, err => {
+    console.log(chalk.red('Failed to compile.\n'))
+    printErrors(err)
+    process.exit(1)
+  }).catch(err => {
+    if (err && err.message) {
+      console.error(err.message)
+    }
+
+    process.exit(1)
+  }) */
+}
+
+// First, read the current file sizes in build directory.
+// This lets us display how much they changed later.
+measureFileSizesBeforeBuild(paths.appPublic)
+  .then(previousFileSizes => {
+    // Remove all bundled assets
+    del.sync([ paths.appPublicCss, paths.appPublicJs ])
+
+    // Start the webpack build
+    return build(previousFileSizes)
+  })
+  .then(({ stats, previousFileSizes, warnings }) => {
+    if (warnings.length) {
+      console.log(chalk.yellow('Compiled with warnings.\n'))
+      console.log(warnings.join('\n\n'))
+      console.log(`Search for the ${chalk.underline(chalk.yellow('keywords'))} to learn more about each warning.`)
+      console.log(`To ignore, add ${chalk.cyan('// eslint-disable-next-line')} to the line before.\n`)
+    } else {
+      console.log(chalk.green('Compiled successfully.\n'))
+    }
+
+    console.log('File sizes after gzip:\n')
+    printFileSizesAfterBuild(stats, previousFileSizes, paths.appPublic)
+    console.log()
+  }, err => {
+    console.log(chalk.red('Failed to compile.\n'))
+    console.log((err.message || err) + '\n')
+    process.exit(1)
+  })

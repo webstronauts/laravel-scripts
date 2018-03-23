@@ -12,6 +12,8 @@ const resolveOwn = relativePath => path.resolve(__dirname, '..', relativePath)
 module.exports = {
   appPath: resolveApp('.'),
   appPublic: resolveApp('public'),
+  appPublicCss: resolveApp('public/css'),
+  appPublicJs: resolveApp('public/js'),
   appNodeModules: resolveApp('node_modules'),
   appPackageJson: resolveApp('package.json'),
   assetsPath: resolveAsset('.'),
