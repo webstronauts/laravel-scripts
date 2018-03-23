@@ -54,31 +54,17 @@ function compile (entry, config) {
   })
 }
 
-function build (previousFileSizes) {
+async function build (previousFileSizes) {
   console.log('Creating an optimized production build...')
 
-  return Promise.all([
-    compile('client', createClientConfig('production')),
-    compile('server', createServerConfig('production'))
-  ]).then(([clientResult, serverResult]) => ({
+  const clientResult = await compile('client', createClientConfig('production'))
+  const serverResult = await compile('server', createServerConfig('production'))
+
+  return {
     stats: clientResult.stats,
     previousFileSizes,
     warnings: { ...clientResult.warnings, ...serverResult.warnings }
-  }))
-
-  /* .then(({ stats, warnings }) => {
-    // ...
-  }, err => {
-    console.log(chalk.red('Failed to compile.\n'))
-    printErrors(err)
-    process.exit(1)
-  }).catch(err => {
-    if (err && err.message) {
-      console.error(err.message)
-    }
-
-    process.exit(1)
-  }) */
+  }
 }
 
 // First, read the current file sizes in build directory.
