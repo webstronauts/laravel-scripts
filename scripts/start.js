@@ -3,6 +3,7 @@ process.env.BABEL_ENV = 'development'
 process.env.NODE_ENV = 'development'
 
 const chalk = require('chalk')
+const printBuildError = require('react-dev-utils/printBuildError')
 const webpack = require('webpack')
 const createClientConfig = require('../config/webpack.client')
 const createServerConfig = require('../config/webpack.server')
@@ -17,7 +18,7 @@ process.on('unhandledRejection', err => {
 function compile (config) {
   try {
     return webpack(config)
-  } catch (e) {
+  } catch (err) {
     console.log(chalk.red('Failed to compile.\n'))
     printBuildError(err)
     process.exit(1)
