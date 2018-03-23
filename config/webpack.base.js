@@ -110,6 +110,13 @@ module.exports = function (target = 'web', env = 'development') {
             },
 
             {
+              test: /\.(graphql|gql)$/,
+              use: {
+                loader: 'graphql-tag/loader'
+              }
+            },
+
+            {
               test: /\.(css|s[ac]ss)$/,
               use: env === 'development' ? [
                 {
