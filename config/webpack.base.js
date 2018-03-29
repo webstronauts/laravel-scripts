@@ -7,6 +7,7 @@ const dotenv = require('dotenv')
 const dotenvExpand = require('dotenv-expand')
 const resolveEnvVars = require('resolve-env-vars')
 const webpack = require('webpack')
+const babelConfig = require('./babel')
 const paths = require('./paths')
 
 dotenvExpand(dotenv.config({ path: paths.appEnvPath }))
@@ -77,14 +78,7 @@ module.exports = function (target = 'web', env = 'development') {
                 options: {
                   babelrc: true,
                   cacheDirectory: true,
-                  // Move this to a separate package
-                  presets: [
-                    [require.resolve('@babel/preset-env'), {
-                      'modules': false
-                    }],
-                    require.resolve('@babel/preset-react'),
-                    require.resolve('@babel/preset-stage-2')
-                  ]
+                  ...babelConfig
                 }
               }
             },

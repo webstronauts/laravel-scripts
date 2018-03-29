@@ -23,6 +23,8 @@ module.exports = {
   serverEntry: resolveAsset('js/entry-server'),
   clientEntry: resolveAsset('js/entry-client'),
 
+  testsSetup: resolveAsset('js/setupTests.js'),
+
   ownPath: resolveOwn('.'),
   ownNodeModules: resolveOwn('node_modules')
 }

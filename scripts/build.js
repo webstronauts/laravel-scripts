@@ -75,7 +75,7 @@ measureFileSizesBeforeBuild(paths.appPublic)
     del.sync([
       paths.appPublicCss,
       paths.appPublicJs,
-      paths.appPublicManifest,
+      paths.appPublicManifest
     ])
 
     // Start the webpack build
