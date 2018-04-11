@@ -1,0 +1,21 @@
+{
+  "name": "@webstronauts/babel-preset-liftoff",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Robin van der Vleuten <robin@webstronauts.co>",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.44",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.44",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.44",
+    "@babel/plugin-transform-react-jsx-source": "^7.0.0-beta.44",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/preset-react": "^7.0.0-beta.44",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13"
+  }
+}
