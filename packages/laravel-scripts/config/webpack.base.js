@@ -26,8 +26,6 @@ module.exports = function (target = 'web', env = 'development') {
     babelOptions.presets.push(require.resolve('../babel'))
   }
 
-  console.log(babelOptions)
-
   const config = {
     // Use Laravel's default assets directory as webpack's context.
     context: paths.assetsPath,

@@ -1,4 +1,4 @@
-module.exports = function (api, opts) {
+module.exports = function () {
   const preset = {
     presets: [
       [require.resolve('@babel/preset-env'), {
@@ -30,25 +30,25 @@ module.exports = function (api, opts) {
   }
 
   if (env === 'development' || env === 'test') {
-    preset.plugins.push([
+    preset.plugins.push(
       // Adds component stack to warning messages
       require.resolve('@babel/plugin-transform-react-jsx-source')
-    ])
+    )
   }
 
   if (env === 'test') {
-    preset.plugins.push([
+    preset.plugins.push(
       // Compiles import() to a deferred require()
       require.resolve('babel-plugin-dynamic-import-node'),
       // Transform ES modules to commonjs for Jest support
       require.resolve('@babel/plugin-transform-modules-commonjs')
-    ])
+    )
   }
 
   if (env === 'production') {
-    preset.plugins.push([
+    preset.plugins.push(
       require.resolve('babel-plugin-transform-react-remove-prop-types')
-    ])
+    )
   }
 
   return preset
