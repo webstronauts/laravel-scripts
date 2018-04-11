@@ -57,7 +57,7 @@ function compile (entry, config) {
 }
 
 async function build (previousFileSizes) {
-  let liftoff = {};
+  let liftoff = {}
 
   try {
     // Check if liftoff.config.js exists
@@ -65,7 +65,7 @@ async function build (previousFileSizes) {
   } catch (e) {}
 
   let clientConfig = createClientConfig('production')
-  let serverConfig = createClientConfig('production')
+  let serverConfig = createServerConfig('production')
 
   if (liftoff.webpack) {
     clientConfig = liftoff.webpack(clientConfig, { target: 'web', dev: false }, webpack)

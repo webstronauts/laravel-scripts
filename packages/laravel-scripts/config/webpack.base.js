@@ -1,3 +1,4 @@
+const fs = require('fs')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('razzle-dev-utils/FriendlyErrorsPlugin')
@@ -7,13 +8,25 @@ const dotenv = require('dotenv')
 const dotenvExpand = require('dotenv-expand')
 const resolveEnvVars = require('resolve-env-vars')
 const webpack = require('webpack')
-const babelConfig = require('./babel')
 const paths = require('./paths')
 
 dotenvExpand(dotenv.config({ path: paths.appEnvPath }))
 
 module.exports = function (target = 'web', env = 'development') {
   const envVars = resolveEnvVars('LIFTOFF_')
+
+  // First we check to see if the user has a custom .babelrc file, otherwise
+  // we just use babel-preset-liftoff.
+  const hasBabelRc = fs.existsSync(paths.appBabelRc)
+  const babelOptions = { babelrc: true, cacheDirectory: true, presets: [] }
+
+  if (hasBabelRc) {
+    console.log('Using .babelrc defined in your app root')
+  } else {
+    babelOptions.presets.push(require.resolve('../babel'))
+  }
+
+  console.log(babelOptions)
 
   const config = {
     // Use Laravel's default assets directory as webpack's context.
@@ -52,6 +65,7 @@ module.exports = function (target = 'web', env = 'development') {
     module: {
       // Makes missing exports an error instead of warning
       strictExportPresence: true,
+
       rules: [
         // Disable require.ensure as it's not a standard language feature.
         { parser: { requireEnsure: false } },
@@ -60,7 +74,7 @@ module.exports = function (target = 'web', env = 'development') {
           enforce: 'pre',
           test: /\.s[ac]ss$/,
           use: {
-            loader: 'sass-loader',
+            loader: require.resolve('sass-loader'),
             options: {
               sourceMap: true
             }
@@ -75,11 +89,7 @@ module.exports = function (target = 'web', env = 'development') {
               exclude: /node_modules/,
               use: {
                 loader: require.resolve('babel-loader'),
-                options: {
-                  babelrc: true,
-                  cacheDirectory: true,
-                  ...babelConfig
-                }
+                options: babelOptions
               }
             },
 
@@ -106,7 +116,7 @@ module.exports = function (target = 'web', env = 'development') {
             {
               test: /\.(graphql|gql)$/,
               use: {
-                loader: 'graphql-tag/loader'
+                loader: require.resolve('graphql-tag/loader')
               }
             },
 

@@ -19,6 +19,7 @@ module.exports = {
   appLiftoffConfig: resolveApp('liftoff.config.js'),
   appNodeModules: resolveApp('node_modules'),
   appPackageJson: resolveApp('package.json'),
+  appBabelRc: resolveApp('.babelrc'),
   assetsPath: resolveAsset('.'),
 
   serverEntry: resolveAsset('js/entry-server'),
