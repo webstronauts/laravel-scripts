@@ -21,6 +21,8 @@ process.on('unhandledRejection', err => {
 function compile (entry, config) {
   const compiler = webpack(config)
 
+  console.log(`Compiling ${entry}...`)
+
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
       if (err) {
@@ -55,10 +57,25 @@ function compile (entry, config) {
 }
 
 async function build (previousFileSizes) {
+  let liftoff = {};
+
+  try {
+    // Check if liftoff.config.js exists
+    liftoff = require(paths.appLiftoffConfig)
+  } catch (e) {}
+
+  let clientConfig = createClientConfig('production')
+  let serverConfig = createClientConfig('production')
+
+  if (liftoff.webpack) {
+    clientConfig = liftoff.webpack(clientConfig, { target: 'web', dev: false }, webpack)
+    serverConfig = liftoff.webpack(serverConfig, { target: 'node', dev: false }, webpack)
+  }
+
   console.log('Creating an optimized production build...')
 
-  const clientResult = await compile('client', createClientConfig('production'))
-  const serverResult = await compile('server', createServerConfig('production'))
+  const clientResult = await compile('client', clientConfig)
+  const serverResult = await compile('server', serverConfig)
 
   return {
     stats: clientResult.stats,

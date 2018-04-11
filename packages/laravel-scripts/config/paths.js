@@ -16,6 +16,7 @@ module.exports = {
   appPublicCss: resolveApp('public/css'),
   appPublicJs: resolveApp('public/js'),
   appPublicManifest: resolveApp('public/mix-manifest.json'),
+  appLiftoffConfig: resolveApp('liftoff.config.js'),
   appNodeModules: resolveApp('node_modules'),
   appPackageJson: resolveApp('package.json'),
   assetsPath: resolveAsset('.'),
