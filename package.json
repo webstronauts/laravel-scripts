@@ -1,11 +1,9 @@
 {
   "private": true,
   "scripts": {
+    "changelog": "lerna-changelog",
     "test": "standard"
   },
-  "workspaces": [
-    "packages/**"
-  ],
   "devDependencies": {
     "lerna": "^2.9.1",
     "standard": "^11.0.1"
