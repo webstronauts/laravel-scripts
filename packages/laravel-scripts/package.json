@@ -1,6 +1,6 @@
 {
   "name": "@webstronauts/laravel-scripts",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "This package includes scripts and configuration used by Laravel Liftoff",
   "license": "MIT",
   "author": "Robin van der Vleuten <robin@webstronauts.co>",
