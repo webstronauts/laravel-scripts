@@ -1,6 +1,6 @@
 {
   "name": "@webstronauts/laravel-scripts",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "This package includes scripts and configuration used by Laravel Liftoff",
   "license": "MIT",
   "author": "Robin van der Vleuten <robin@webstronauts.co>",
@@ -18,7 +18,7 @@
   "dependencies": {
     "@babel/core": "^7.0.0-beta.44",
     "@babel/polyfill": "^7.0.0-beta.44",
-    "@webstronauts/babel-preset-liftoff": "^0.0.0",
+    "@webstronauts/babel-preset-liftoff": "^0.1.0",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^22.4.3",
     "babel-loader": "^8.0.0-beta",
