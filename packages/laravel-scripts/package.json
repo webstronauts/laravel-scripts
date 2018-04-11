@@ -10,7 +10,8 @@
   "files": [
     "bin",
     "config",
-    "scripts"
+    "scripts",
+    "babel.js"
   ],
   "bin": {
     "laravel-scripts": "./bin/laravel-scripts.js"
