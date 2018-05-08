@@ -8,7 +8,7 @@ switch (script) {
   case 'build':
   case 'start':
   case 'test': {
-    const result = spawn.sync('node', [require.resolve('../scripts/' + script)].concat(args), { stdio: 'inherit' })
+    const result = spawn.sync('node', [require.resolve('../lib/scripts/' + script)].concat(args), { stdio: 'inherit' })
 
     if (result.signal) {
       if (result.signal === 'SIGKILL') {
