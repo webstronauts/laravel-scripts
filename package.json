@@ -9,8 +9,7 @@
   },
   "files": [
     "bin",
-    "config",
-    "scripts",
+    "lib",
     "babel.js"
   ],
   "bin": {
