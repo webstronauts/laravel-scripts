@@ -29,6 +29,7 @@ switch (script) {
     }
 
     process.exit(result.status)
+    // eslint-disable-next-line no-unreachable
     break
   }
 
