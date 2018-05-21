@@ -1,11 +1,11 @@
 <div align="center">
 <h1>laravel-scripts 🛠📦</h1>
-<p>A front-end CLI toolbox used by <a href="https://github.com/webstronauts/laravel-liftoff">[Laravel Liftoff]</a>.</p>
+<p>A front-end CLI toolbox used by <a href="https://github.com/webstronauts/laravel-liftoff">Laravel Liftoff</a>.</p>
 </div>
 
 <hr />
 
-[![License]](https://img.shields.io/github/license/webstronauts/laravel-scripts.svg)](LICENSE.md)
+[![License](https://img.shields.io/github/license/webstronauts/laravel-scripts.svg)](LICENSE.md)
 [![Version](https://img.shields.io/npm/v/@webstronauts/laravel-scripts.svg)](https://www.npmjs.com/package/@webstronauts/laravel-scripts)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
