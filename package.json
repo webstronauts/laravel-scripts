@@ -16,7 +16,7 @@
     "laravel-scripts": "./bin/laravel-scripts.js"
   },
   "scripts": {
-    "test": "standard"
+    "precommit": "pretty-quick --staged"
   },
   "dependencies": {
     "@babel/core": "7.0.0-beta.47",
@@ -60,6 +60,8 @@
     "webpack-sources": "^1.1.0"
   },
   "devDependencies": {
-    "standard": "^11.0.1"
+    "husky": "^0.14.3",
+    "prettier": "^1.12.1",
+    "pretty-quick": "^1.5.0"
   }
 }
