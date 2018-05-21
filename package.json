@@ -1,7 +1,7 @@
 {
   "name": "@webstronauts/laravel-scripts",
   "version": "0.11.0",
-  "description": "This package includes scripts and configuration used by Laravel Liftoff",
+  "description": "A front-end CLI toolbox used by Laravel Liftoff",
   "license": "MIT",
   "author": "Robin van der Vleuten <robin@webstronauts.co>",
   "engines": {
