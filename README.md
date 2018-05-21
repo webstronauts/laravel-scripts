@@ -1,7 +1,8 @@
 <div align="center">
-<h1>laravel-scripts 🛠📦</h1>
-<p>A front-end CLI toolbox used by <a href="https://github.com/webstronauts/laravel-liftoff">Laravel Liftoff</a>.</p>
-</div>
+
+# laravel-scripts 🛠📦
+
+A front-end CLI toolbox used by [Laravel Liftoff](https://github.com/webstronauts/laravel-liftoff).
 
 <hr />
 
@@ -9,6 +10,8 @@
 [![Version](https://img.shields.io/npm/v/@webstronauts/laravel-scripts.svg)](https://www.npmjs.com/package/@webstronauts/laravel-scripts)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
+
+</div>
 
 ## Installation
 
@@ -20,7 +23,9 @@ npm install --save-dev @webstronauts/laravel-scripts
 
 ## Usage
 
-This is a CLI and exposes a bin called `laravel-scripts`. We don't really plan on documenting or testing it very well because it's really specific to our custom [Laravel boilerplate](https://github.com/webstronauts/laravel-liftoff). You'll find all available scripts in `lib/scripts`. Below is a list of commands you will probably find useful.
+This is a CLI and exposes a bin called `laravel-scripts`. We don't really plan on documenting or testing it very well because it's really specific to our custom [Laravel boilerplate](https://github.com/webstronauts/laravel-liftoff). You'll find all available scripts in `lib/scripts`.
+
+Below is a list of commands you will probably find useful.
 
 ### `npm start` or `yarn start`
 
