@@ -10,7 +10,8 @@
   "files": [
     "bin",
     "lib",
-    "babel.js"
+    "babel.js",
+    "prettier.js"
   ],
   "bin": {
     "laravel-scripts": "./bin/laravel-scripts.js"
