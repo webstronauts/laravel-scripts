@@ -49,6 +49,6 @@ This package won't be there without the help and inspiration of the following pr
 * [zeit/next.js](https://github.com/zeit/next.js)
 * [developit/preact-cli](https://github.com/developit/preact-cli)
 
-## License
+## Author(s)
 
-MIT © [The Webstronauts](https://www.webstronauts.co?utm_source=github&utm_medium=readme&utm_content=laravel-scripts)
+Robin van der Vleuten ([@robinvdvleuten](https://twitter.com/robinvdvleuten)) - [The Webstronauts](https://www.webstronauts.co?utm_source=github&utm_medium=readme&utm_content=laravel-scripts)
