@@ -14,7 +14,7 @@
     "prettier.js"
   ],
   "bin": {
-    "laravel-scripts": "./bin/laravel-scripts.js"
+    "laravel-scripts": "./bin/liftoff-scripts.js"
   },
   "scripts": {
     "precommit": "pretty-quick --staged"

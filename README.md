@@ -23,7 +23,7 @@ npm install --save-dev @webstronauts/laravel-scripts
 
 ## Usage
 
-This is a CLI and exposes a bin called `laravel-scripts`. We don't really plan on documenting or testing it very well because it's really specific to our custom [Laravel boilerplate](https://github.com/webstronauts/laravel-liftoff). You'll find all available scripts in `lib/scripts`.
+This is a CLI and exposes a bin called `liftoff-scripts`. We don't really plan on documenting or testing it very well because it's really specific to our custom [Laravel boilerplate](https://github.com/webstronauts/laravel-liftoff). You'll find all available scripts in `lib/scripts`.
 
 Below is a list of commands you will probably find useful.
 
@@ -43,11 +43,11 @@ Runs the test watcher (Jest) in an interactive mode. By default, runs tests rela
 
 This package won't be there without the help and inspiration of the following projects;
 
-* [facebook/create-react-app](https://github.com/facebook/create-react-app)
-* [JeffreyWay/laravel-mix](https://github.com/JeffreyWay/laravel-mix)
-* [jaredpalmer/razzle](https://github.com/jaredpalmer/razzle)
-* [zeit/next.js](https://github.com/zeit/next.js)
-* [developit/preact-cli](https://github.com/developit/preact-cli)
+- [facebook/create-react-app](https://github.com/facebook/create-react-app)
+- [JeffreyWay/laravel-mix](https://github.com/JeffreyWay/laravel-mix)
+- [jaredpalmer/razzle](https://github.com/jaredpalmer/razzle)
+- [zeit/next.js](https://github.com/zeit/next.js)
+- [developit/preact-cli](https://github.com/developit/preact-cli)
 
 ## Author(s)
 
