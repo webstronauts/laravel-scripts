@@ -16,6 +16,10 @@
   "bin": {
     "liftoff-scripts": "./bin/liftoff-scripts.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webstronauts/liftoff-scripts.git"
+  },
   "scripts": {
     "precommit": "pretty-quick --staged"
   },
