@@ -54,6 +54,7 @@
     "resolve-env-vars": "^1.0.0",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
+    "thread-loader": "^1.1.5",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.12.0",
     "webpack-assets-manifest": "^3.0.0",
