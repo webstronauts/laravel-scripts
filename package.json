@@ -1,5 +1,5 @@
 {
-  "name": "@webstronauts/laravel-scripts",
+  "name": "@webstronauts/liftoff-scripts",
   "version": "0.13.0",
   "description": "A front-end CLI toolbox used by Laravel Liftoff",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "prettier.js"
   ],
   "bin": {
-    "laravel-scripts": "./bin/liftoff-scripts.js"
+    "liftoff-scripts": "./bin/liftoff-scripts.js"
   },
   "scripts": {
     "precommit": "pretty-quick --staged"

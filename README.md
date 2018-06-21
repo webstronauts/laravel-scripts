@@ -1,13 +1,13 @@
 <div align="center">
 
-# laravel-scripts 🛠📦
+# liftoff-scripts 🛠📦
 
 A front-end CLI toolbox used by [Laravel Liftoff](https://github.com/webstronauts/laravel-liftoff).
 
 <hr />
 
-[![License](https://img.shields.io/github/license/webstronauts/laravel-scripts.svg)](LICENSE.md)
-[![Version](https://img.shields.io/npm/v/@webstronauts/laravel-scripts.svg)](https://www.npmjs.com/package/@webstronauts/laravel-scripts)
+[![License](https://img.shields.io/github/license/webstronauts/liftoff-scripts.svg)](LICENSE.md)
+[![Version](https://img.shields.io/npm/v/@webstronauts/liftoff-scripts.svg)](https://www.npmjs.com/package/@webstronauts/liftoff-scripts)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
 
@@ -15,10 +15,10 @@ A front-end CLI toolbox used by [Laravel Liftoff](https://github.com/webstronaut
 
 ## Installation
 
-This package is distributed via [NPM](https://www.npmjs.com/package/@webstronauts/laravel-scripts) which is bundled with [Node](https://nodejs.org/) and should be installed as one of your project's `devDependencies`:
+This package is distributed via [NPM](https://www.npmjs.com/package/@webstronauts/liftoff-scripts) which is bundled with [Node](https://nodejs.org/) and should be installed as one of your project's `devDependencies`:
 
 ```
-npm install --save-dev @webstronauts/laravel-scripts
+npm install --save-dev @webstronauts/liftoff-scripts
 ```
 
 ## Usage
@@ -51,4 +51,4 @@ This package won't be there without the help and inspiration of the following pr
 
 ## Author(s)
 
-Robin van der Vleuten ([@robinvdvleuten](https://twitter.com/robinvdvleuten)) - [The Webstronauts](https://www.webstronauts.co?utm_source=github&utm_medium=readme&utm_content=laravel-scripts)
+Robin van der Vleuten ([@robinvdvleuten](https://twitter.com/robinvdvleuten)) - [The Webstronauts](https://www.webstronauts.co?utm_source=github&utm_medium=readme&utm_content=liftoff-scripts)

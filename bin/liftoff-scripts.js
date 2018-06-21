@@ -44,7 +44,7 @@ switch (script) {
     console.log(
       `
       Unknown script "${script}".
-      Perhaps you need to update laravel-scripts?
+      Perhaps you need to update @webstronauts/liftoff-scripts?
     `.trim(),
     )
     break
