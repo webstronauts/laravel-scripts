@@ -41,7 +41,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "^2.3.2",
-    "css-loader": "^0.28.11",
+    "css-loader": "^1.0.0",
     "del": "^3.0.0",
     "dotenv": "^6.0.0",
     "dotenv-expand": "^4.2.0",
