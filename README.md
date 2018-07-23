@@ -2,7 +2,7 @@
 
 # liftoff-scripts 🛠📦
 
-A front-end CLI toolbox used by [Laravel Liftoff](https://github.com/webstronauts/laravel-liftoff).
+A front-end CLI toolbox used by our projects.
 
 <hr />
 
