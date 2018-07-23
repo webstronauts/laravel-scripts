@@ -71,6 +71,7 @@
     "webpack-sources": "^1.1.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-constant-elements": "^7.0.0-beta.54",
     "husky": "^0.14.3",
     "prettier": "^1.13.5",
     "pretty-quick": "^1.6.0"
