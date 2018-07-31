@@ -1,7 +1,19 @@
+const path = require('path')
 const proxyquire = require('proxyquire')
 const sinon = require('sinon')
+const slash = require('slash')
 const spawn = require('cross-spawn')
 const test = require('ava')
+
+const projectRoot = path.join(__dirname, '../')
+
+function normalizeArgs(args) {
+  return args.map(arg => {
+    return Array.isArray(arg)
+      ? normalizeArgs(arg)
+      : slash(arg.replace(projectRoot, '<PROJECT_ROOT>/'))
+  })
+}
 
 test.beforeEach(t => {
   t.context.exit = sinon.stub(process, 'exit')
@@ -31,16 +43,16 @@ function spawnMacro(
     proxyquire('../lib/run-script', {'cross-spawn': {sync: t.context.sync}})
 
     if (snapshotLog) {
-      t.snapshot(console.log.args)
+      t.snapshot(normalizeArgs(console.log.args))
     } else if (signal) {
       t.true(process.exit.calledOnce)
       t.true(process.exit.calledWith(1))
-      t.snapshot(console.log.args)
+      t.snapshot(normalizeArgs(console.log.args))
     } else {
       t.true(t.context.sync.calledOnce)
       const [firstCall] = t.context.sync.args
       const [script, calledArgs] = firstCall
-      t.snapshot([script, ...calledArgs].join(' '))
+      t.snapshot(normalizeArgs([script, ...calledArgs]).join(' '))
     }
   } catch (err) {
     if (!throws) {

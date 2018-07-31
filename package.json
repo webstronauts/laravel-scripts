@@ -83,6 +83,7 @@
     "prettier": "^1.13.7",
     "pretty-quick": "^1.6.0",
     "sinon": "^6.1.4",
+    "slash": "^2.0.0",
     "standard-version": "^4.4.0"
   }
 }
