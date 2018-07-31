@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.18.1"></a>
+
+## [0.18.1](https://github.com/webstronauts/liftoff-scripts/compare/v0.18.0...v0.18.1) (2018-07-31)
+
+### Bug Fixes
+
+- **deps:** added missing dependencies ([4cb36e4](https://github.com/webstronauts/liftoff-scripts/commit/4cb36e4))
+
 <a name="0.18.0"></a>
 
 # [0.18.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.17.1...v0.18.0) (2018-07-31)
