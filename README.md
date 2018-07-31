@@ -8,6 +8,7 @@ A front-end CLI toolbox used by our projects.
 
 [![License](https://img.shields.io/github/license/webstronauts/liftoff-scripts.svg)](LICENSE.md)
 [![Version](https://img.shields.io/npm/v/@webstronauts/liftoff-scripts.svg)](https://www.npmjs.com/package/@webstronauts/liftoff-scripts)
+[![Build Status](https://travis-ci.com/webstronauts/liftoff-scripts.svg?branch=master)](https://travis-ci.com/webstronauts/liftoff-scripts)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
 
