@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.19.0"></a>
+
+# [0.19.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.18.1...v0.19.0) (2018-08-01)
+
+### Bug Fixes
+
+- **deps:** proxyquire must be a dev dependency ([1f10e73](https://github.com/webstronauts/liftoff-scripts/commit/1f10e73))
+- **webpack:** paths are passed as options ([f0f5620](https://github.com/webstronauts/liftoff-scripts/commit/f0f5620))
+
+### Features
+
+- **webpack:** paths can be configured through the cli ([#65](https://github.com/webstronauts/liftoff-scripts/issues/65)) ([aa0adc5](https://github.com/webstronauts/liftoff-scripts/commit/aa0adc5))
+- **webpack:** using webpack-cli directly ([#63](https://github.com/webstronauts/liftoff-scripts/issues/63)) ([ffc8f58](https://github.com/webstronauts/liftoff-scripts/commit/ffc8f58))
+
 <a name="0.18.1"></a>
 
 ## [0.18.1](https://github.com/webstronauts/liftoff-scripts/compare/v0.18.0...v0.18.1) (2018-07-31)
