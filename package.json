@@ -83,7 +83,7 @@
   "devDependencies": {
     "ava": "0.25.0",
     "husky": "0.14.3",
-    "prettier": "1.13.7",
+    "prettier": "1.14.0",
     "pretty-quick": "1.6.0",
     "proxyquire": "2.0.1",
     "sinon": "6.1.4",
