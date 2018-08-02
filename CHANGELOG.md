@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.20.0"></a>
+
+# [0.20.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.19.0...v0.20.0) (2018-08-02)
+
+### Features
+
+- **jest:** paths can be passed when testing ([888d906](https://github.com/webstronauts/liftoff-scripts/commit/888d906))
+
 <a name="0.19.0"></a>
 
 # [0.19.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.18.1...v0.19.0) (2018-08-01)
