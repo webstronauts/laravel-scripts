@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.22.0"></a>
+
+# [0.22.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.21.1...v0.22.0) (2018-08-07)
+
+### Features
+
+- **webpack:** only apply babel on deps when targeting web ([b5b70d8](https://github.com/webstronauts/liftoff-scripts/commit/b5b70d8))
+- **webpack:** tweaked css optimizer options ([c2939dd](https://github.com/webstronauts/liftoff-scripts/commit/c2939dd))
+
 <a name="0.21.1"></a>
 
 ## [0.21.1](https://github.com/webstronauts/liftoff-scripts/compare/v0.21.0...v0.21.1) (2018-08-07)
