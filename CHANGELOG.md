@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.21.0"></a>
+
+# [0.21.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.20.0...v0.21.0) (2018-08-07)
+
+### Bug Fixes
+
+- **deps:** update babel monorepo to v7.0.0-beta.56 ([#66](https://github.com/webstronauts/liftoff-scripts/issues/66)) ([f8245df](https://github.com/webstronauts/liftoff-scripts/commit/f8245df)), closes [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203)
+- **webpack:** correctly pass the directory arguments ([ce4d8d4](https://github.com/webstronauts/liftoff-scripts/commit/ce4d8d4))
+
+### Features
+
+- **jest:** resolve rootDir from source directory ([d809e02](https://github.com/webstronauts/liftoff-scripts/commit/d809e02))
+- **webpack:** make sure that build errors our logged ([04f3ff7](https://github.com/webstronauts/liftoff-scripts/commit/04f3ff7))
+- **webpack:** show output sizes when compiling ([a45a42a](https://github.com/webstronauts/liftoff-scripts/commit/a45a42a))
+
 <a name="0.20.0"></a>
 
 # [0.20.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.19.0...v0.20.0) (2018-08-02)
