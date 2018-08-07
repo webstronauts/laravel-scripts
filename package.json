@@ -89,6 +89,6 @@
     "sinon": "6.1.4",
     "slash": "2.0.0",
     "standard-version": "4.4.0",
-    "webpackbar": "^2.6.1"
+    "webpackbar": "2.6.1"
   }
 }
