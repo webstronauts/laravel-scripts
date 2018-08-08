@@ -1,6 +1,6 @@
 {
   "name": "@webstronauts/liftoff-scripts",
-  "version": "0.23.0",
+  "version": "0.23.1",
   "description": "A front-end CLI toolbox used by our projects",
   "license": "MIT",
   "author": "Robin van der Vleuten <robin@webstronauts.co>",

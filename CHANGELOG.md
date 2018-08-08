@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.23.1"></a>
+
+## [0.23.1](https://github.com/webstronauts/liftoff-scripts/compare/v0.23.0...v0.23.1) (2018-08-08)
+
+### Bug Fixes
+
+- **deps:** make sure webpackbar is not a dev dependency ([888efab](https://github.com/webstronauts/liftoff-scripts/commit/888efab))
+
 <a name="0.23.0"></a>
 
 # [0.23.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.22.0...v0.23.0) (2018-08-08)
