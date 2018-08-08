@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.23.0"></a>
+
+# [0.23.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.22.0...v0.23.0) (2018-08-08)
+
+### Bug Fixes
+
+- **deps:** update dependency style-loader to ^0.22.0 ([#68](https://github.com/webstronauts/liftoff-scripts/issues/68)) ([d58ecc3](https://github.com/webstronauts/liftoff-scripts/commit/d58ecc3)), closes [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203) [#8203](https://github.com/webstronauts/liftoff-scripts/issues/8203)
+- **webpack:** do not error when liftoff is not define. fixes [#67](https://github.com/webstronauts/liftoff-scripts/issues/67) ([e8e1c42](https://github.com/webstronauts/liftoff-scripts/commit/e8e1c42))
+
+### Features
+
+- **webpack:** show progress bar while compiling ([908316b](https://github.com/webstronauts/liftoff-scripts/commit/908316b))
+
 <a name="0.22.0"></a>
 
 # [0.22.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.21.1...v0.22.0) (2018-08-07)
