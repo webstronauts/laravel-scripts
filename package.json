@@ -87,7 +87,7 @@
     "prettier": "1.14.0",
     "pretty-quick": "1.6.0",
     "proxyquire": "2.0.1",
-    "sinon": "6.1.4",
+    "sinon": "6.1.5",
     "slash": "2.0.0",
     "standard-version": "4.4.0"
   }
