@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.24.0"></a>
+
+# [0.24.0](https://github.com/webstronauts/liftoff-scripts/compare/v0.23.1...v0.24.0) (2018-08-16)
+
+### Bug Fixes
+
+- **deps:** update babel monorepo to v7.0.0-rc.1 ([#72](https://github.com/webstronauts/liftoff-scripts/issues/72)) ([b6fc142](https://github.com/webstronauts/liftoff-scripts/commit/b6fc142))
+- **deps:** update dependency postcss-loader to v3 ([#71](https://github.com/webstronauts/liftoff-scripts/issues/71)) ([660e90e](https://github.com/webstronauts/liftoff-scripts/commit/660e90e))
+
+### Features
+
+- **webpack:** replaced uglify with terser ([fd4fa04](https://github.com/webstronauts/liftoff-scripts/commit/fd4fa04))
+
 <a name="0.23.1"></a>
 
 ## [0.23.1](https://github.com/webstronauts/liftoff-scripts/compare/v0.23.0...v0.23.1) (2018-08-08)
